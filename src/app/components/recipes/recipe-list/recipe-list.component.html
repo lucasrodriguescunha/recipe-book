@@ -1,25 +1,21 @@
+<!-- Início de uma linha no layout -->
 <div class="row">
+  <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
   <div class="col-xs-12">
+    <!-- Botão com estilo Bootstrap que permite criar uma nova receita -->
     <button class="btn btn-success">Nova Receita</button>
   </div>
 </div>
+
+<!-- Linha horizontal para separar visualmente as seções -->
 <hr />
+
+<!-- Início de outra linha no layout -->
 <div class="row">
+  <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
   <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-        <p class="list-group-item-text">{{ recipe.description }}</p>
-      </div>
-      <span class="pull-right">
-        <img
-          [src]="recipe.imagePath"
-          alt="{{ recipe.name }}"
-          class="img-responsive"
-          style="max-height: 50px"
-        />
-      </span>
-    </a>
-    <app-recipe-item></app-recipe-item>
+    <!-- Componente Angular app-recipe-item repetido para cada receita na lista de receitas -->
+    <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl">
+    </app-recipe-item>
   </div>
 </div>

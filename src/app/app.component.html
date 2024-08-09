@@ -1,10 +1,16 @@
-<app-header></app-header>
+<!-- Componente de cabeçalho. O evento `featureSelect` é emitido pelo componente `app-header`, e o método `onNavigate($event)` é chamado para tratar o evento quando ocorre. -->
+<app-header (featureSelect)="onNavigate($event)"></app-header>
 
+<!-- Container principal para o conteúdo da página. -->
 <div class="container">
+  <!-- Linha (row) para organizar os elementos de forma responsiva dentro do container. -->
   <div class="row">
+    <!-- Coluna (col-md-12) que ocupa 12 unidades em uma grade de 12 colunas, o que significa que ela se estende por toda a largura disponível no dispositivo de tamanho médio ou maior. -->
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <!-- Componente de receitas. Ele é exibido somente se a variável `loadedFeature` for igual a 'recipe'. -->
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <!-- Componente de lista de compras. Ele é exibido se a variável `loadedFeature` não for igual a 'recipe'. -->
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>

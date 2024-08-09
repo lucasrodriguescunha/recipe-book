@@ -1,13 +1,21 @@
+<!-- Início de uma linha (row) no layout usando o sistema de grid do Bootstrap -->
 <div class="row">
+  <!-- Coluna que ocupa 10 das 12 colunas disponíveis em todos os tamanhos de dispositivo (xs) -->
   <div class="col-xs-10">
+    <!-- Componente Angular para edição de itens na lista de compras -->
     <app-shopping-edit></app-shopping-edit>
+    <!-- Linha horizontal para separar visualmente as seções -->
     <hr />
+    <!-- Início de uma lista em grupo (list-group) -->
     <ul class="list-group">
+      <!-- Item da lista, representado como um link (a), estilizado como item de lista e com cursor de ponteiro -->
+      <!-- A diretiva *ngFor repete o item para cada ingrediente na lista de ingredientes -->
       <a
         class="list-group-item"
         style="cursor: pointer"
         *ngFor="let ingredient of ingredients"
       >
+        <!-- Exibe o nome e a quantidade de cada ingrediente -->
         {{ ingredient.name }} ({{ ingredient.amount }})
       </a>
     </ul>

@@ -1,27 +1,46 @@
+<!-- Barra de navegação usando classes do Bootstrap para estilização. -->
 <nav class="navbar navbar-default">
+  <!-- Container para garantir que o conteúdo dentro da navbar seja fluido e responsivo. -->
   <div class="container-fluid">
+    <!-- Cabeçalho da navbar, geralmente contendo o branding e botões de colapso para dispositivos móveis. -->
     <div class="navbar-header">
+      <!-- Botão para alternar a visibilidade da navbar em dispositivos móveis. Quando clicado, inverte o valor da variável `collapsed`, abrindo ou fechando o menu. -->
       <button
         type="button"
         class="navbar-toggle"
         (click)="collapsed = !collapsed"
       >
+        <!-- Ícones que formam o "hamburger menu" (três barras horizontais) para o botão de colapso. -->
         <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
       </button>
 
+      <!-- Link que redireciona para a página inicial (root) e mostra o nome da aplicação, aqui chamado de "Livro de Receitas". -->
       <a routerLink="/" class="navbar-brand">Livro de Receitas</a>
     </div>
 
+    <!-- Menu de navegação, que é colapsado em dispositivos móveis. O atributo `[class.collapse]` adiciona ou remove a classe `collapse` com base no valor de `collapsed`. -->
     <div class="collapse navbar-collapse" [class.collapse]="collapsed">
+      <!-- Lista de navegação principal, alinhada à esquerda. -->
       <ul class="nav navbar-nav">
-        <li><a href="#">Receitas</a></li>
-        <li><a href="#">Lista de Compras</a></li>
+        <!-- Link para a seção de receitas. Quando clicado, chama o método `onSelect('recipe')` para carregar as receitas. -->
+        <li><a href="#" (click)="onSelect('recipe')">Receitas</a></li>
+
+        <!-- Link para a seção de lista de compras. Quando clicado, chama o método `onSelect('shopping-list')` para carregar a lista de compras. -->
+        <li>
+          <a href="#" (click)="onSelect('shopping-list')">Lista de Compras</a>
+        </li>
       </ul>
+
+      <!-- Lista de navegação secundária, alinhada à direita, com um menu suspenso para gerenciamento. -->
       <ul class="nav navbar-nav navbar-right">
+        <!-- Item de menu suspenso para ações de gerenciamento. -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" role="button"
-            >Gerenciar <span class="caret"></span
-          ></a>
+          <!-- Link que abre o menu suspenso ao ser clicado. -->
+          <a href="#" class="dropdown-toggle" role="button">
+            Gerenciar <span class="caret"></span>
+          </a>
+
+          <!-- Itens dentro do menu suspenso, com links para salvar ou buscar dados. -->
           <ul class="dropdown-menu">
             <li><a href="#">Guardar dados</a></li>
             <li><a href="#">Buscar Dados</a></li>

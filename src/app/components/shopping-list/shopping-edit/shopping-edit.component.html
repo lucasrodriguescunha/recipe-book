@@ -1,22 +1,37 @@
+<!-- Início de uma linha (row) no layout usando o sistema de grid do Bootstrap -->
 <div class="row">
+  <!-- Coluna que ocupa 12 colunas em todos os tamanhos de dispositivo (xs) -->
   <div class="col-xs-12">
+    <!-- Início do formulário -->
     <form>
+      <!-- Primeira linha do formulário -->
       <div class="row">
+        <!-- Coluna que ocupa 5 colunas em dispositivos pequenos (sm), com um grupo de formulário para o campo Nome -->
         <div class="col-sm-5 form-group">
+          <!-- Rótulo associado ao campo de texto Nome -->
           <label for="name">Nome</label>
+          <!-- Campo de entrada de texto para o nome, com a classe form-control do Bootstrap -->
           <input type="text" id="name" class="form-control" />
         </div>
 
+        <!-- Coluna que ocupa 2 colunas em dispositivos pequenos (sm), com um grupo de formulário para o campo Quantia -->
         <div class="col-sm-2 form-group">
+          <!-- Rótulo associado ao campo numérico Quantia -->
           <label for="amount">Quantia</label>
+          <!-- Campo de entrada numérico para a quantia, com a classe form-control do Bootstrap -->
           <input type="number" id="amount" class="form-control" />
         </div>
       </div>
 
+      <!-- Segunda linha do formulário -->
       <div class="row">
+        <!-- Coluna que ocupa 12 colunas em todos os tamanhos de dispositivo (xs) -->
         <div class="col-xs-12">
+          <!-- Botão verde para enviar o formulário, com texto "Adicionar" -->
           <button class="btn btn-success" type="submit">Adicionar</button>
+          <!-- Botão vermelho para ações, com texto "Excluir" -->
           <button class="btn btn-danger" type="button">Excluir</button>
+          <!-- Botão azul para limpar os campos do formulário, com texto "Limpar" -->
           <button class="btn btn-primary" type="button">Limpar</button>
         </div>
       </div>

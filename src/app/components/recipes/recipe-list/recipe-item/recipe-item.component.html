@@ -1,1 +1,21 @@
-<p>recipe-item works!</p>
+<!-- Link que atua como um item de uma lista, com a classe list-group-item do Bootstrap -->
+<a href="#" class="list-group-item clearfix">
+  <!-- Div alinhada à esquerda, onde o conteúdo textual é posicionado -->
+  <div class="pull-left">
+    <!-- Título do item, exibindo o nome da receita -->
+    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+    <!-- Texto descritivo do item, exibindo a descrição da receita -->
+    <p class="list-group-item-text">{{ recipe.description }}</p>
+  </div>
+
+  <!-- Span alinhado à direita, onde a imagem da receita é posicionada -->
+  <span class="pull-right">
+    <!-- Imagem da receita, com o caminho dinâmico utilizando Angular data binding -->
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-responsive"
+      style="max-height: 50px"
+    />
+  </span>
+</a>
