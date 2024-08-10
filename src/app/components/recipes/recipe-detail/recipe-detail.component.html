@@ -1,9 +1,14 @@
 <!-- Início de uma linha no layout -->
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
-  <div class="cox-xs-12">
-    <!-- Imagem responsiva que se ajusta ao tamanho do container -->
-    <img src="" alt="" class="img-responsive" />
+  <div class="col-xs-12">
+    <!-- Imagem responsiva da receita, ajusta-se ao tamanho do container com altura máxima de 300px -->
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-responsive"
+      style="max-height: 300px"
+    />
   </div>
 </div>
 
@@ -11,8 +16,8 @@
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
   <div class="col-xs-12">
-    <!-- Título da receita -->
-    <h1>Nome da Receita</h1>
+    <!-- Título da receita exibido como cabeçalho -->
+    <h1>{{ recipe.name }}</h1>
   </div>
 </div>
 
@@ -20,17 +25,17 @@
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
   <div class="col-xs-12">
-    <!-- Grupo de botões, geralmente usado para ações agrupadas -->
+    <!-- Grupo de botões para ações relacionadas à receita -->
     <div class="btn-group">
-      <!-- Botão principal com um dropdown para ações adicionais -->
+      <!-- Botão principal com dropdown para ações adicionais -->
       <button type="button" class="btn btn-primary" dropdown-toggle>
         Gerenciar Receita <span class="caret"></span>
       </button>
       <!-- Menu dropdown com links para diferentes ações -->
       <ul class="dropdown-menu">
-        <li><a href="#">Para a lista de compras</a></li>
+        <li><a href="#">Adicionar à lista de compras</a></li>
         <li><a href="#">Editar Receita</a></li>
-        <li><a href="#">Excluir receita</a></li>
+        <li><a href="#">Excluir Receita</a></li>
       </ul>
     </div>
   </div>
@@ -40,8 +45,8 @@
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
   <div class="col-xs-12">
-    <!-- Texto ou conteúdo relacionado à descrição da receita -->
-    Descrição
+    <!-- Descrição da receita -->
+    {{ recipe.description }}
   </div>
 </div>
 
@@ -49,7 +54,7 @@
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
   <div class="col-xs-12">
-    <!-- Texto ou conteúdo relacionado aos ingredientes da receita -->
+    <!-- Seção que apresenta os ingredientes da receita -->
     Ingredientes
   </div>
 </div>

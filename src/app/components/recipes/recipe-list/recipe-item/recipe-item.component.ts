@@ -1,5 +1,5 @@
 // Importa as dependências necessárias do Angular
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 // Importa o modelo Recipe, que define a estrutura de dados da receita
 import { Recipe } from '../../recipe.model';
 
@@ -16,4 +16,13 @@ import { Recipe } from '../../recipe.model';
 export class RecipeItemComponent {
   // Decorador @Input() permite que a propriedade recipe receba dados de outro componente pai
   @Input() recipe: Recipe;
+
+  // Decorador @Output() cria um EventEmitter que emite um evento quando a receita é selecionada
+  @Output() recipeSelect = new EventEmitter<void>();
+
+  // Método chamado quando o item é selecionado
+  onSelected() {
+    // Emite o evento recipeSelect para o componente pai
+    this.recipeSelect.emit();
+  }
 }

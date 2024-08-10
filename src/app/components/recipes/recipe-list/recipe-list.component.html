@@ -15,7 +15,11 @@
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
   <div class="col-xs-12">
     <!-- Componente Angular app-recipe-item repetido para cada receita na lista de receitas -->
-    <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl">
+    <app-recipe-item
+      *ngFor="let recipeEl of recipes"
+      [recipe]="recipeEl"
+      (recipeSelect)="onRecipeSelected(recipeEl)"
+    >
     </app-recipe-item>
   </div>
 </div>

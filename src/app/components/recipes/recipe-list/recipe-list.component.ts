@@ -1,5 +1,5 @@
 // Importa as dependências necessárias do Angular
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 // Importa o modelo Recipe, que define a estrutura de dados de uma receita
 import { Recipe } from '../recipe.model';
 
@@ -14,20 +14,28 @@ import { Recipe } from '../recipe.model';
 })
 // Declaração da classe do componente RecipeListComponent
 export class RecipeListComponent implements OnInit {
-  // Propriedade recipes que é um array de objetos Recipe, inicializado com dois exemplos de receitas
+  // Output que emite um evento quando uma receita é selecionada
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+
+  // Array de objetos Recipe, inicializado com dois exemplos de receitas
   recipes: Recipe[] = [
     new Recipe(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://img.cybercook.com.br/receitas/731/lasanha-3.jpeg'
+      'A Test Recipe', // Nome da receita
+      'This is simply a test', // Descrição da receita
+      'https://img.cybercook.com.br/receitas/731/lasanha-3.jpeg' // URL da imagem da receita
     ),
     new Recipe(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://img.cybercook.com.br/receitas/731/lasanha-3.jpeg'
+      'Another Test Recipe', // Nome da segunda receita
+      'This is simply a test', // Descrição da segunda receita
+      'https://img.cybercook.com.br/receitas/731/lasanha-3.jpeg' // URL da imagem da segunda receita
     ),
   ];
 
-  // Implementação do método ngOnInit do ciclo de vida do componente Angular
+  // Método do ciclo de vida do Angular, executado após a inicialização do componente
   ngOnInit(): void {}
+
+  // Método chamado quando uma receita é selecionada, emitindo o evento recipeWasSelected com a receita selecionada
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 }
