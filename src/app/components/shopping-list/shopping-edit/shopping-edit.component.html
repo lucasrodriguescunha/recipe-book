@@ -1,35 +1,37 @@
-<!-- Início de uma linha (row) no layout usando o sistema de grid do Bootstrap -->
+<!-- Início de uma linha no layout utilizando o sistema de grid do Bootstrap -->
 <div class="row">
-  <!-- Coluna que ocupa 12 colunas em todos os tamanhos de dispositivo (xs) -->
+  <!-- Coluna que ocupa todas as 12 colunas disponíveis em todos os tamanhos de dispositivo -->
   <div class="col-xs-12">
-    <!-- Início do formulário -->
+    <!-- Início do formulário para entrada de dados -->
     <form>
-      <!-- Primeira linha do formulário -->
+      <!-- Primeira linha do formulário, contendo os campos Nome e Quantia -->
       <div class="row">
-        <!-- Coluna que ocupa 5 colunas em dispositivos pequenos (sm), com um grupo de formulário para o campo Nome -->
+        <!-- Coluna que ocupa 5 colunas em dispositivos pequenos (sm), contendo um grupo de formulário para o campo Nome -->
         <div class="col-sm-5 form-group">
-          <!-- Rótulo associado ao campo de texto Nome -->
+          <!-- Rótulo associado ao campo de texto Nome, especificando o propósito do campo -->
           <label for="name">Nome</label>
-          <!-- Campo de entrada de texto para o nome, com a classe form-control do Bootstrap -->
-          <input type="text" id="name" class="form-control" />
+          <!-- Campo de entrada de texto para o nome, estilizado com a classe form-control do Bootstrap -->
+          <input type="text" id="name" class="form-control" #nameInput />
         </div>
 
-        <!-- Coluna que ocupa 2 colunas em dispositivos pequenos (sm), com um grupo de formulário para o campo Quantia -->
+        <!-- Coluna que ocupa 2 colunas em dispositivos pequenos (sm), contendo um grupo de formulário para o campo Quantia -->
         <div class="col-sm-2 form-group">
-          <!-- Rótulo associado ao campo numérico Quantia -->
+          <!-- Rótulo associado ao campo numérico Quantia, indicando a finalidade do campo -->
           <label for="amount">Quantia</label>
-          <!-- Campo de entrada numérico para a quantia, com a classe form-control do Bootstrap -->
-          <input type="number" id="amount" class="form-control" />
+          <!-- Campo de entrada numérica para a quantia, utilizando a classe form-control do Bootstrap -->
+          <input type="number" id="amount" class="form-control" #amountInput />
         </div>
       </div>
 
-      <!-- Segunda linha do formulário -->
+      <!-- Segunda linha do formulário, contendo os botões de ação -->
       <div class="row">
-        <!-- Coluna que ocupa 12 colunas em todos os tamanhos de dispositivo (xs) -->
+        <!-- Coluna que ocupa todas as 12 colunas disponíveis em todos os tamanhos de dispositivo -->
         <div class="col-xs-12">
-          <!-- Botão verde para enviar o formulário, com texto "Adicionar" -->
-          <button class="btn btn-success" type="submit">Adicionar</button>
-          <!-- Botão vermelho para ações, com texto "Excluir" -->
+          <!-- Botão verde para enviar os dados do formulário, com texto "Adicionar" -->
+          <button class="btn btn-success" type="submit" (click)="onAddItem()">
+            Adicionar
+          </button>
+          <!-- Botão vermelho para realizar ações, como excluir, com texto "Excluir" -->
           <button class="btn btn-danger" type="button">Excluir</button>
           <!-- Botão azul para limpar os campos do formulário, com texto "Limpar" -->
           <button class="btn btn-primary" type="button">Limpar</button>
