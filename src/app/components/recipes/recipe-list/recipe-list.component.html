@@ -1,25 +1,25 @@
-<!-- Início de uma linha no layout -->
+<!-- Início de uma linha (row) no layout usando o sistema de grid do Bootstrap -->
 <div class="row">
-  <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
+  <!-- Coluna que ocupa todas as 12 colunas disponíveis em telas extra pequenas (xs) -->
   <div class="col-xs-12">
-    <!-- Botão com estilo Bootstrap que permite criar uma nova receita -->
+    <!-- Botão com estilo Bootstrap para criar uma nova receita,
+         utilizando a classe btn-success para estilização verde -->
     <button class="btn btn-success">Nova Receita</button>
   </div>
 </div>
 
-<!-- Linha horizontal para separar visualmente as seções -->
+<!-- Linha horizontal (hr) usada para separar visualmente as seções da página -->
 <hr />
 
-<!-- Início de outra linha no layout -->
+<!-- Início de outra linha (row) no layout usando o sistema de grid do Bootstrap -->
 <div class="row">
-  <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) -->
+  <!-- Coluna que ocupa todas as 12 colunas disponíveis em telas extra pequenas (xs) -->
   <div class="col-xs-12">
-    <!-- Componente Angular app-recipe-item repetido para cada receita na lista de receitas -->
-    <app-recipe-item
-      *ngFor="let recipeEl of recipes"
-      [recipe]="recipeEl"
-      (recipeSelect)="onRecipeSelected(recipeEl)"
-    >
+    <!-- Componente Angular app-recipe-item repetido para cada receita na lista de receitas.
+         A diretiva *ngFor itera sobre a lista de receitas, criando uma instância
+         do componente app-recipe-item para cada receita, passando a receita atual
+         como entrada através da propriedade [recipe] -->
+    <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl">
     </app-recipe-item>
   </div>
 </div>

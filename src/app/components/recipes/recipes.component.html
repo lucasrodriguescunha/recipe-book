@@ -2,19 +2,22 @@
 <div class="row">
   <!-- Primeira coluna que ocupa 5 das 12 colunas disponíveis em dispositivos de tamanho médio (md) -->
   <div class="col-md-5">
-    <!-- Componente Angular que exibe a lista de receitas e emite um evento ao selecionar uma receita -->
-    <app-recipe-list
-      (recipeWasSelected)="selectedRecipe = $event"
-    ></app-recipe-list>
+    <!-- Componente Angular responsável por exibir uma lista de receitas
+         e emitir um evento ao selecionar uma receita da lista -->
+    <app-recipe-list></app-recipe-list>
   </div>
   <!-- Segunda coluna que ocupa 7 das 12 colunas disponíveis em dispositivos de tamanho médio (md) -->
   <div class="col-md-7">
-    <!-- Componente Angular que exibe os detalhes da receita selecionada, caso haja uma -->
+    <!-- Componente Angular que exibe os detalhes da receita selecionada.
+         O componente é exibido condicionalmente, ou seja, apenas se
+         uma receita estiver selecionada (avaliada pela variável selectedRecipe).
+         Caso contrário, exibe uma mensagem informativa -->
     <app-recipe-detail
       *ngIf="selectedRecipe; else infoText"
       [recipe]="selectedRecipe"
     ></app-recipe-detail>
-    <!-- Mensagem informativa exibida quando nenhuma receita está selecionada -->
+    <!-- Template que exibe uma mensagem informativa quando nenhuma receita
+         está selecionada, indicando ao usuário que ele deve selecionar uma receita -->
     <ng-template #infoText>
       <p>Please select a Recipe!</p>
     </ng-template>
