@@ -1,23 +1,21 @@
-<!-- Início de uma linha no layout utilizando o sistema de grid do Bootstrap -->
+<!-- Início de uma linha no layout, utilizando o sistema de grid do Bootstrap para organização -->
 <div class="row">
-  <!-- Coluna que ocupa 10 das 12 colunas disponíveis, adaptando-se para todos os tamanhos de dispositivo -->
+  <!-- Coluna que ocupa 10 das 12 colunas disponíveis no grid, garantindo adaptação a diferentes tamanhos de dispositivo -->
   <div class="col-xs-10">
-    <!-- Componente Angular responsável pela edição de itens na lista de compras -->
-    <app-shopping-edit
-      (ingredientAdded)="onIngredientAdded($event)"
-    ></app-shopping-edit>
-    <!-- Linha horizontal para separar visualmente diferentes seções da interface -->
+    <!-- Componente Angular responsável pela edição de itens na lista de compras, permitindo a adição e modificação de ingredientes -->
+    <app-shopping-edit></app-shopping-edit>
+    <!-- Linha horizontal (hr) para separar visualmente diferentes seções da interface do usuário -->
     <hr />
-    <!-- Início de uma lista em grupo, utilizando a classe 'list-group' do Bootstrap para estilização -->
+    <!-- Início de uma lista de itens agrupados, utilizando a classe 'list-group' do Bootstrap para estilização consistente -->
     <ul class="list-group">
-      <!-- Item da lista representado como um link, estilizado como item de lista e com cursor de ponteiro -->
-      <!-- A diretiva *ngFor do Angular repete este item para cada ingrediente na lista de ingredientes -->
+      <!-- Cada item da lista é um link estilizado, configurado para parecer um item de lista e exibir um cursor de ponteiro ao passar o mouse -->
+      <!-- A diretiva *ngFor do Angular gera este item repetidamente para cada ingrediente presente na lista 'ingredients' -->
       <a
         class="list-group-item"
         style="cursor: pointer"
         *ngFor="let ingredient of ingredients"
       >
-        <!-- Exibição do nome e da quantidade de cada ingrediente na lista -->
+        <!-- Exibe o nome do ingrediente e sua respectiva quantidade, formatados entre parênteses -->
         {{ ingredient.name }} ({{ ingredient.amount }})
       </a>
     </ul>
