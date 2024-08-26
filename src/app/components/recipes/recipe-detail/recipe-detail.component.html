@@ -1,65 +1,68 @@
-<!-- Início de uma linha no layout para a imagem da receita -->
+<!-- Início de uma linha no layout para a exibição da imagem da receita -->
 <div class="row">
-  <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) para garantir que a imagem ocupe toda a largura disponível -->
+  <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs), garantindo que a imagem ocupe toda a largura disponível -->
   <div class="col-xs-12">
-    <!-- Imagem responsiva da receita, que se ajusta ao tamanho do container e tem uma altura máxima de 300px -->
+    <!-- Imagem responsiva da receita, que se ajusta ao tamanho do container com altura máxima de 300px -->
     <img
       [src]="recipe.imagePath"
       style="max-height: 300px"
       class="img-responsive"
       alt="{{ recipe.name }}"
     />
-    <!-- Define o texto alternativo com o nome da receita para acessibilidade -->
+    <!-- Define o texto alternativo com o nome da receita para melhorar a acessibilidade -->
     <!-- Aplica a classe Bootstrap para tornar a imagem responsiva -->
-    <!-- Define uma altura máxima para a imagem, garantindo que ela não ultrapasse 300px -->
+    <!-- Define uma altura máxima para a imagem, garantindo que não ultrapasse 300px -->
   </div>
 </div>
 
-<!-- Início de uma nova linha no layout para o título da receita -->
+<!-- Início de uma nova linha no layout para exibir o título da receita -->
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs), garantindo que o título ocupe toda a largura disponível -->
   <div class="col-xs-12">
     <!-- Título da receita exibido como um cabeçalho de nível 1 -->
     <h1>{{ recipe.name }}</h1>
-    <!-- Exibe o nome da receita como um título -->
+    <!-- Exibe o nome da receita como título -->
   </div>
 </div>
 
-<!-- Início de uma nova linha no layout para os botões de ação -->
+<!-- Início de uma nova linha no layout para os botões de ação da receita -->
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs), garantindo que os botões ocupem toda a largura disponível -->
   <div class="col-xs-12">
     <!-- Grupo de botões que permite realizar ações relacionadas à receita, com comportamento de dropdown -->
     <div class="btn-group" appDropdown>
-      <!-- Botão principal que aciona o dropdown com as ações adicionais -->
+      <!-- Botão principal que aciona o dropdown com ações adicionais -->
       <button type="button" class="btn btn-primary" dropdown-toggle>
         Gerenciar Receita <span class="caret"></span>
-        <!-- Ícone que indica o dropdown -->
+        <!-- Ícone que indica a presença de um dropdown -->
       </button>
-      <!-- Menu dropdown que contém os links para diferentes ações -->
+      <!-- Menu dropdown que contém os links para as diferentes ações -->
       <ul class="dropdown-menu">
-        <li><a href="#">Adicionar à lista de compras</a></li>
         <!-- Link para adicionar a receita à lista de compras -->
-        <li><a href="#">Editar Receita</a></li>
+        <li>
+          <a href="#" (click)="onAddToShoppingList()" style="cursor: pointer"
+            >Adicionar à lista de compras</a
+          >
+        </li>
         <!-- Link para editar a receita -->
-        <li><a href="#">Excluir Receita</a></li>
+        <li><a href="#">Editar Receita</a></li>
         <!-- Link para excluir a receita -->
+        <li><a href="#">Excluir Receita</a></li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- Início de uma nova linha no layout para a descrição da receita -->
+<!-- Início de uma nova linha no layout para exibir a descrição da receita -->
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs), garantindo que a descrição ocupe toda a largura disponível -->
   <div class="col-xs-12">
-    <!-- Descrição textual da receita -->
+    <!-- Exibe a descrição textual da receita -->
     {{ recipe.description }}
-    <!-- Exibe a descrição da receita -->
   </div>
 </div>
 
-<!-- Início de uma nova linha no layout para a lista de ingredientes -->
+<!-- Início de uma nova linha no layout para a lista de ingredientes da receita -->
 <div class="row">
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs), garantindo que a lista de ingredientes ocupe toda a largura disponível -->
   <div class="col-xs-12">
@@ -68,7 +71,7 @@
       <!-- Itera sobre a lista de ingredientes da receita, criando um item de lista para cada ingrediente -->
       <li *ngFor="let ingredient of recipe.ingredients" class="list-group-item">
         {{ ingredient.name }} - {{ ingredient.amount }}
-        <!-- Exibe o nome e a quantidade do ingrediente -->
+        <!-- Exibe o nome e a quantidade de cada ingrediente -->
       </li>
     </ul>
   </div>
