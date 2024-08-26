@@ -3,14 +3,15 @@
   <!-- Coluna que ocupa 12 colunas em telas extra pequenas (xs) para garantir que a imagem ocupe toda a largura disponível -->
   <div class="col-xs-12">
     <!-- Imagem responsiva da receita, que se ajusta ao tamanho do container e tem uma altura máxima de 300px -->
-    <img [src]="recipe.imagePath" />
-    alt="{{ recipe.name }}"
-    <!-- Define o texto alternativo com o nome da receita para acessibilidade -->
-    class="img-responsive"
-    <!-- Aplica a classe Bootstrap para tornar a imagem responsiva -->
-    style="max-height: 300px"
-    <!-- Define uma altura máxima para a imagem, garantindo que ela não ultrapasse 300px -->
+    <img
+      [src]="recipe.imagePath"
+      style="max-height: 300px"
+      class="img-responsive"
+      alt="{{ recipe.name }}"
     />
+    <!-- Define o texto alternativo com o nome da receita para acessibilidade -->
+    <!-- Aplica a classe Bootstrap para tornar a imagem responsiva -->
+    <!-- Define uma altura máxima para a imagem, garantindo que ela não ultrapasse 300px -->
   </div>
 </div>
 
