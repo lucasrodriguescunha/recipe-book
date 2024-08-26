@@ -1,17 +1,27 @@
-// Declaração da classe Recipe
-export class Recipe {
-  // Declaração das propriedades públicas da classe Recipe
-  public name: string;
-  public description: string;
-  public imagePath: string;
+import { Ingredient } from 'src/app/shared/ingredient.model';
 
-  // Construtor da classe Recipe que inicializa as propriedades
-  constructor(name: string, description: string, imagePath: string) {
-    // Atribui o valor do parâmetro name à propriedade name da classe
+// Classe Recipe que representa uma receita com nome, descrição, imagem e lista de ingredientes
+export class Recipe {
+  // Propriedades públicas da classe Recipe para armazenar os detalhes da receita
+  public name: string; // Nome da receita
+  public description: string; // Descrição da receita
+  public imagePath: string; // Caminho da imagem da receita
+  public ingredients: Ingredient[]; // Lista de ingredientes necessários para a receita
+
+  // Construtor da classe Recipe que inicializa as propriedades com os valores fornecidos
+  constructor(
+    name: string, // Nome da receita
+    description: string, // Descrição detalhada da receita
+    imagePath: string, // URL ou caminho da imagem ilustrativa da receita
+    ingredients: Ingredient[] // Array de objetos Ingredient que compõem a receita
+  ) {
+    // Inicializa a propriedade name com o valor fornecido no parâmetro name
     this.name = name;
-    // Atribui o valor do parâmetro description à propriedade description da classe
+    // Inicializa a propriedade description com o valor fornecido no parâmetro description
     this.description = description;
-    // Atribui o valor do parâmetro imagePath à propriedade imagePath da classe
+    // Inicializa a propriedade imagePath com o valor fornecido no parâmetro imagePath
     this.imagePath = imagePath;
+    // Inicializa a propriedade ingredients com o array de ingredientes fornecido
+    this.ingredients = ingredients;
   }
 }
